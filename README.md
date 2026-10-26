@@ -1,36 +1,39 @@
-# Computational Genomics | Educational Python Portfolio
+# Computational Genomics | Python Portfolio
 
-A small, reproducible **post-course portfolio adaptation** of core computational-genomics concepts encountered in the University of Melbourne **COMP90016 Computational Genomics** workshops (2024). It demonstrates basic data handling across common genomics formats, using **new Python code and exclusively fictional synthetic data**.
+Independent, **AI-assisted educational implementations** of genomics data processing and algorithm concepts. This portfolio was developed after prior coursework and uses newly authored Python demonstrations plus synthetic example data. It is **not** a copy of graded assignments or workshop notebooks.
 
-> **Provenance:** This repository is not the student's original workshop archive, assessed notebooks, or a reproduction of university assignments. These demonstration programs and tests were newly prepared with AI assistance after the course, drawing on general subject themes. It does not contain classroom materials, other students' work, restricted datasets, identifiable student records or solution notebooks.
+## Implemented modules
 
-## What is included
+| Module | Contents | Scope |
+| --- | --- | --- |
+| `genomics/sequence.py` | Reverse complement, GC fraction, k-mer counts | Sequence utilities |
+| `genomics/fastq_qc.py` | FASTQ parsing, Q20, Phred quality, GC | Simplified read QC |
+| `genomics/variants.py` | VCF parsing, variant classification | File analysis, not variant calling |
+| `genomics/metagenomics.py` | Kraken2-style report summarization | Report parsing only |
+| `genomics/single_cell_qc.py` | Per-cell RNA count and mitochondrial metrics | QC only |
+| `genomics/alignment.py` | Needleman–Wunsch global DNA alignment | Educational dynamic programming |
+| `genomics/read_mapping.py` | Exact-match positions on a reference | No approximate mapping |
+| `genomics/assembly.py` | k-mers and maximal nonbranching de Bruijn paths | Toy assembler; unresolved cycles |
+| `genomics/phylogenetics.py` | Pairwise aligned DNA p-distance matrix | No inferred phylogenetic tree |
+| `genomics/annotation.py` | Forward-strand ATG-to-stop ORF enumeration | Not genome annotation software |
 
-| Module | Demonstration | What it does *not* claim |
-|---|---|---|
-| `sequence.py` | Reverse complement, GC fraction, k-mer counts | No ambiguous-base support or genomic feature annotation |
-| `fastq_qc.py` | FASTQ read parsing, mean Phred, Q20 and GC summary | Not a replacement for FastQC/NanoPlot |
-| `variants.py` | Single-allele VCF variant-type summary | Not a variant caller or clinical interpretation system |
-| `metagenomics.py` | Parse a small Kraken2-style six-column report | Does not run Kraken2 or classify reads |
-| `single_cell_qc.py` | Per-cell total counts, detected genes, mitochondrial fraction | Not a single-cell RNA-seq processing pipeline |
+## Workflow notes
 
-The original coursework also exposed tools such as read alignment, assembly, phylogenetics, annotation and single-cell workflows. Those are **documented as topics studied**, not presented as fully implemented or rerun pipelines here.
+`docs/workflows.md` outlines six broader analysis workflows, including short-read QC/mapping and variant analysis, long-read assembly, phylogenetics, genome annotation, metagenomics and single-cell RNA-seq. **These are conceptual notes, not executable workflows**. `docs/limitations.md` documents project scope.
 
-## Run locally
+## Run
 
-Requires Python 3.10+; **standard library only**.
+Python 3.10+; standard library only.
 
 ```bash
 python -m genomics.cli
 python -m unittest discover -s tests -v
 ```
 
-Run from the repository root. All bundled inputs under `data/` are fabricated examples, with no biological or clinical meaning. The FASTQ example assumes Phred+33 encoding; VCF reader processes simple tab-delimited records and classifies multiallelic/symbolic records as `other_or_multiallelic`. The Kraken report demo covers the familiar six-column Kraken2 report layout, not arbitrary taxonomic result formats.
+Examples in `data/` are fully synthetic. `tests/test_examples.py` checks the original five demonstrations; `tests/test_extended.py` checks the added algorithm modules. Run both with the command above.
 
-## Scope and possible extensions
+## Provenance and limitations
 
-This project is intentionally a **small foundational showcase** rather than a claim of end-to-end computational-genomics pipeline development. Reasonable next steps include adding a fully reproducible public-data QC case study, proper workflow environments, provenance and reference accession IDs, benchmark/validation outputs, and documented variant-calling or single-cell analysis with dedicated bioinformatics tools.
+Created for technical portfolio demonstration after studying general computational-genomics topics. Code, illustrative data, documentation, and tests were prepared with AI assistance. **This is not an original submission archive**, and the implementation should not be represented as professional production pipelines or verified laboratory methods.
 
-## Academic integrity and licensing
-
-Only newly authored teaching demonstrations are bundled; university-provided assessment questions, example solutions, workshop notebooks, training datasets, and personal information have been excluded. Confirm the applicable university course rules before making this public. No third-party course material is licensed or redistributed here.
+No assessment questions, provided workshop data, instructor solutions, personal identifiers, or third-party materials are redistributed. No clinical interpretations are supported. No claim is made that FastQC, Snippy, Flye, QUAST, Prokka, BLAST, IQ-TREE2, Kraken2 or Seurat were run as part of this repository. See `PROJECT_NOTES.md` for details.
