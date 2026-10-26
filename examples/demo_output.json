@@ -1,0 +1,68 @@
+{
+  "sequence": {
+    "reverse_complement": "TACGGCAT",
+    "gc_fraction": 0.5,
+    "dinucleotides": {
+      "AT": 1,
+      "TG": 1,
+      "GC": 1,
+      "CC": 1,
+      "CG": 1,
+      "GT": 1,
+      "TA": 1
+    }
+  },
+  "fastq_qc": {
+    "reads": 3,
+    "bases": 24,
+    "mean_length": 8.0,
+    "mean_phred": 30.0,
+    "q20_fraction": 1.0,
+    "gc_fraction": 0.4583
+  },
+  "vcf": {
+    "records": 4,
+    "classes": {
+      "SNV": 1,
+      "insertion": 1,
+      "deletion": 1,
+      "MNV": 1
+    }
+  },
+  "metagenomics_species": [
+    {
+      "taxon": "Species alpha (synthetic)",
+      "taxid": "111",
+      "clade_reads": 22,
+      "direct_reads": 22,
+      "percent": 55.0
+    },
+    {
+      "taxon": "Species beta (synthetic)",
+      "taxid": "222",
+      "clade_reads": 10,
+      "direct_reads": 10,
+      "percent": 25.0
+    }
+  ],
+  "single_cell_qc": [
+    {
+      "cell_id": "cell_A",
+      "total_counts": 6,
+      "detected_genes": 3,
+      "mitochondrial_fraction": 0.1667
+    },
+    {
+      "cell_id": "cell_B",
+      "total_counts": 8,
+      "detected_genes": 2,
+      "mitochondrial_fraction": 0.5
+    },
+    {
+      "cell_id": "cell_C",
+      "total_counts": 2,
+      "detected_genes": 2,
+      "mitochondrial_fraction": 0.0
+    }
+  ]
+}

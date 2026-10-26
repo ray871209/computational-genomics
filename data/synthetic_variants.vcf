@@ -1,0 +1,7 @@
+##fileformat=VCFv4.2
+##contig=<ID=demo_chr,length=10000>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+demo_chr	100	.	A	G	60	PASS	.
+demo_chr	250	.	A	AT	55	PASS	.
+demo_chr	460	.	GC	G	50	PASS	.
+demo_chr	700	.	AC	GT	40	PASS	.

@@ -1,0 +1,4 @@
+cell_id,GENE_A,GENE_B,MT-CO1,GENE_C
+cell_A,3,0,1,2
+cell_B,0,4,4,0
+cell_C,1,1,0,0
